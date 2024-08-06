@@ -7,8 +7,8 @@
 #include <spdlog/spdlog.h>
 #include "../networked_character_data/networked_character_data.hpp"
 
-using UniqueIDPacket = uint64_t;
-using PacketData = std::variant<UniqueIDPacket, NetworkedCharacterData>;
+using ClientID = unsigned int;
+using PacketData = std::variant<ClientID, NetworkedCharacterData>;
 
 PacketData parse_packet(ENetPacket *packet);
 
