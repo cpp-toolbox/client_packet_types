@@ -8,7 +8,8 @@
 #include "../networked_character_data/networked_character_data.hpp"
 
 using ClientID = unsigned int;
-using PacketData = std::variant<ClientID, NetworkedCharacterData>;
+using GameUpdate = std::vector<NetworkedCharacterData>;
+using PacketData = std::variant<ClientID, GameUpdate>;
 
 PacketData parse_packet(ENetPacket *packet);
 
